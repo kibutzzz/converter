@@ -1,12 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
-import * as serviceWorker from './serviceWorker';
+import { createI18n, I18nProvider } from 'react-simple-i18n';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import { langData } from "./i18n/data";
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+let code = navigator.language || navigator.userLanguage;
+if(code !== "pt-BR") {
+  code = "en-US"
+}
+ReactDOM.render(
+  (
+    <I18nProvider i18n={createI18n(langData, { lang: code })}>
+      <App />
+    </I18nProvider>
+  ), document.getElementById('root'));
+
