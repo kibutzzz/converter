@@ -9,7 +9,6 @@ import UsaFlag from "./i18n/flags/usa.png";
 function App() {
   const { t, i18n } = useI18n()
 
-  console.log(t);
   const [decimal, setDecimal] = useState("");
   const [hexadecimal, setHexadecimal] = useState("");
   const [octal, setOctal] = useState("");
