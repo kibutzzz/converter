@@ -102,11 +102,11 @@ function App() {
       <span>{t("description")}</span>
       <InputBlock>
         <label>{t("inputs.decimal")}</label>
-        <input type="number" onChange={changeHandlers.decimal} value={decimal} pattern="[0-9]*" maxLength="15" />
+        <input type="text" inputMode="numeric" onChange={changeHandlers.decimal} value={decimal} pattern="[0-9]*" maxLength="15" />
       </InputBlock>
       <InputBlock>
         <label>{t("inputs.binary")}</label>
-        <input type="number" onChange={changeHandlers.binary} value={binary} pattern="[0-1]*" maxLength="50" />
+        <input type="text" inputMode="numeric" onChange={changeHandlers.binary} value={binary} pattern="[0-1]*" maxLength="50" />
       </InputBlock>
       <InputBlock>
         <label>{t("inputs.hexadecimal")}</label>
@@ -114,7 +114,7 @@ function App() {
       </InputBlock>
       <InputBlock>
         <label>{t("inputs.octal")}</label>
-        <input type="number" onChange={changeHandlers.octal} value={octal} pattern="[0-7]*" maxLength="17" />
+        <input type="text" inputMode="numeric" onChange={changeHandlers.octal} value={octal} pattern="[0-7]*" maxLength="17" />
       </InputBlock>
 
       <GlobalStyle />
